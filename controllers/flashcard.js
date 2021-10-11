@@ -39,6 +39,10 @@ router.get(`/`, (req, res) => {
 })
 
 // ----- NEW Route -----
+router.get(`/new`, (req, res) => {
+    res.render(`../views/flashcards/new.ejs`)
+})
+
 // ----- DELETE Route -----
 router.delete(`/:id`, (req, res) => {
     Flashcard.findByIdAndRemove(req.params.id, (err, data) => {
@@ -47,7 +51,16 @@ router.delete(`/:id`, (req, res) => {
 })
 
 // ----- UPDATE Route -----
+
 // ----- CREATE Route -----
+router.post(`/`, (req, res) => {
+    Flashcard.create(req.body, (err, createdFlashcard) => {
+        console.log(createdFlashcard)
+        res.redirect(`/flashcards`)
+    })
+})
+
+
 // ----- EDIT Route -----
 
 // ----- SHOW Route -----
