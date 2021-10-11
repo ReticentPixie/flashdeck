@@ -1,8 +1,23 @@
 <%- include('../views/partials/head.ejs') %>
 <body>
     <%- include('../views/partials/nav.ejs') %>
-    <h1>Welcome to Flashdeck!</h1>
-    <a href='/'>Home</a><br>
-    <a href='/flashcards'>See all cards</a>
+    <div class='container' id='homepageBody'>
+        <h1>Welcome to Flashdeck!</h1>
+        <h4>The interactive, user created flashcard study tool for all those new to programmer.</h4>
+        <div id='homepageSelections'>
+            <div class='homepageImageLinks hvr-float-shadow'>
+                <a href='/flashcards'>
+                    <img src=https://images.freeimages.com/images/large-previews/63d/index-card-1413900.jpg alt='See the Deck'>
+                    <h4>See the Deck</h4>
+                </a>
+            </div>
+            <div class='homepageImageLinks hvr-float-shadow'>
+                <a href='/flashcards/new'>
+                    <img src=https://images.freeimages.com/images/large-previews/63d/index-card-1413900.jpg alt='Add a New Card'>
+                    <h4>Add a New Card</h4>
+                </a>
+            </div>
+        </div>
+    </div>
 </body>
 <%- include('../views/partials/footer.ejs') %>
