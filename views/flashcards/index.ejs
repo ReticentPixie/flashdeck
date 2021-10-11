@@ -1,13 +1,19 @@
 <%- include('../partials/head.ejs') %>
 <body>
     <%- include('../partials/nav.ejs') %>
-    <h1>All Flashcards</h1>
-    <ul>
-        <% flashcards.forEach(flashcard => { %>
-            <li>
-                <a href='/flashcards/<%= flashcard._id %>'><%= flashcard.title %></a>
-            </li>
-        <% }) %>
-    </ul>
+    <div class='container' id='flashcardIndexBody'>
+        <h1>Table of Contents</h1>
+        <h4>Words/Concepts are in alphabetical order.</h4>
+        <ul>
+            <% flashcards.forEach(flashcard => { %>
+                <div id='indexRow'>
+                    <li><i class="fas fa-star"></i></i></li>
+                    <li>
+                        <a href='/flashcards/<%= flashcard._id %>'><%= flashcard.title %></a>
+                    </li>
+                </div>
+            <% }) %>
+        </ul>
+    </div>
 </body>
 <%- include('../partials/footer.ejs') %>

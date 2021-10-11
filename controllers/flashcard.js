@@ -32,12 +32,19 @@ router.get(`/seed`, (req, res) => {
 
 // ----- INDEX Route -----
 router.get(`/`, (req, res) => {
-    Flashcard.find({}, (err, foundFlashcards) => {
+    Flashcard.find({}).sort({title: 1}).then(foundFlashcards => {
+        console.log(foundFlashcards)
         res.render(`flashcards/index.ejs`, {
             flashcards: foundFlashcards,
             pageTitle: `INDEX`,
         })
     })
+    // Flashcard.find({}, (err, foundFlashcards) => {
+    //     res.render(`flashcards/index.ejs`, {
+    //         flashcards: foundFlashcards,
+    //         pageTitle: `INDEX`,
+    //     })
+    // })
 })
 
 // ----- NEW Route -----
@@ -86,7 +93,7 @@ router.get(`/:id`, (req, res) => {
             flashcard: foundFlashcard,
             tags: foundFlashcard.tags.split(', '),
             urls: foundFlashcard.referenceURLs.split(', '),
-            pageTitle: foundFlashcard.title,
+            pageTitle: 'Flashcard',
         })
     })
 })

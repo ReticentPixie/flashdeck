@@ -11,7 +11,7 @@ body {
     font-size: 2.5rem;
     padding: 10px 10px 0px 10px;
     margin-bottom: 10px;
-    border-bottom: 3px solid slategray;
+    box-shadow: 2px 2px 2px 1px slategray;
 }
 
 #navButtons {
@@ -41,19 +41,47 @@ body {
 
 .homepageImageLinks img {
     height: 200px;
-    box-shadow: 0px 0px 2px 2px lightgrey;
+    box-shadow: 2px 2px 2px 1px slategray;
 }
 
 .homepageImageLinks h4 {
     background-color: white;
-    box-shadow: 0px 0px 2px 2px lightgrey;
+    box-shadow: 2px 2px 2px 1px slategray;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
+/* ----- Flashcard INDEX styling ----- */
+#flashcardIndexBody {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding-top: 25px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
 
+#flashcardIndexBody h1,
+#flashcardIndexBody h4 {
+    text-align: center;
+}
+
+#flashcardIndexBody ul {
+    list-style: none;
+    padding-left: 15px;
+}
+
+#flashcardIndexBody li {
+    font-size: 2rem;
+    text-transform: capitalize;
+}
+
+#indexRow {
+    display: flex;
+    gap: 15px;
+}
 
 
 /* ----- Footer styling ----- */
@@ -65,7 +93,7 @@ body {
     font-size: 1.5rem;
     padding: 10px;
     margin-top: 10px;
-    border-top: 3px solid slategray;
+    box-shadow: 2px 2px 2px 1px slategray;
 }
 
 
