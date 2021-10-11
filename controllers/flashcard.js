@@ -43,7 +43,18 @@ Router.get(`/`, (req, res) => {
 // ----- UPDATE Route -----
 // ----- CREATE Route -----
 // ----- EDIT Route -----
+
 // ----- SHOW Route -----
+Router.get(`/:id`, (req, res) => {
+    Flashcard.findById(req.params.id, (err, foundFlashcard) => {
+        console.log(foundFlashcard)
+        res.render(`../views/flashcards/show.ejs`, {
+            flashcard: foundFlashcard,
+            tags: foundFlashcard.tags.split(', '),
+            urls: foundFlashcard.referenceURLs.split(', '),
+        })
+    })
+})
 
 // ========== Export the Router ==========
 module.exports = Router
