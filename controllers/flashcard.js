@@ -35,13 +35,16 @@ router.get(`/`, (req, res) => {
     Flashcard.find({}, (err, foundFlashcards) => {
         res.render(`flashcards/index.ejs`, {
             flashcards: foundFlashcards,
+            pageTitle: `INDEX`,
         })
     })
 })
 
 // ----- NEW Route -----
 router.get(`/new`, (req, res) => {
-    res.render(`flashcards/new.ejs`)
+    res.render(`flashcards/new.ejs`, {
+        pageTitle: `NEW`,
+    })
 })
 
 // ----- DELETE Route -----
@@ -54,7 +57,6 @@ router.delete(`/:id`, (req, res) => {
 // ----- UPDATE Route -----
 router.put(`/:id`, (req, res) => {
     Flashcard.findByIdAndUpdate(req.params.id, req.body, {new: true}, (err, updatedFlashcard) => {
-        console.log(updatedFlashcard)
         // redirect back to the show page
         res.redirect(`/flashcards/${req.params.id}`)
     })
@@ -63,7 +65,6 @@ router.put(`/:id`, (req, res) => {
 // ----- CREATE Route -----
 router.post(`/`, (req, res) => {
     Flashcard.create(req.body, (err, createdFlashcard) => {
-        console.log(createdFlashcard)
         res.redirect(`/flashcards`)
     })
 })
@@ -73,6 +74,7 @@ router.get(`/:id/edit`, (req, res) => {
     Flashcard.findById(req.params.id, (err, foundFlashcard) => {
         res.render(`flashcards/edit.ejs`, {
             flashcard: foundFlashcard,
+            pageTitle: `EDIT`,
         })
     })
 })
@@ -84,6 +86,7 @@ router.get(`/:id`, (req, res) => {
             flashcard: foundFlashcard,
             tags: foundFlashcard.tags.split(', '),
             urls: foundFlashcard.referenceURLs.split(', '),
+            pageTitle: foundFlashcard.title,
         })
     })
 })

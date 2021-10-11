@@ -43,7 +43,9 @@ app.use(methodOverride(`_method`))                  // ----- mount method-overri
 
 // ----- INDEX - Homepage Route -----
 app.get(`/`, (req, res) => {
-    res.render(`index.ejs`)
+    res.render(`index.ejs`, {
+        pageTitle: `Homepage`,
+    })
 })
 
 // ----- require & mount flashcardController to access flashcard routes -----
