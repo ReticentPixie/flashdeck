@@ -4,7 +4,7 @@ const Flashcard = require(`../models/flashcards`)
 
 
 // ========== Initialize Express Router ==========
-const Router = express.Router()
+const router = express.Router()
 
 
 // =======================================
@@ -13,7 +13,7 @@ const Router = express.Router()
 // =======================================
 const flashcardSeed = require(`../models/flashcardSeed`)
 
-Router.get(`/seed`, (req, res) => {
+router.get(`/seed`, (req, res) => {
     // clear the database
     Flashcard.deleteMany({}, (err, allFlashcards) => {})
 
@@ -30,7 +30,7 @@ Router.get(`/seed`, (req, res) => {
 // =======================================
 
 // ----- INDEX Route -----
-Router.get(`/`, (req, res) => {
+router.get(`/`, (req, res) => {
     Flashcard.find({}, (err, foundFlashcards) => {
         res.render(`../views/flashcards/index.ejs`, {
             flashcards: foundFlashcards,
@@ -40,14 +40,19 @@ Router.get(`/`, (req, res) => {
 
 // ----- NEW Route -----
 // ----- DELETE Route -----
+router.delete(`/:id`, (req, res) => {
+    Flashcard.findByIdAndRemove(req.params.id, (err, data) => {
+        res.redirect(`/flashcards`)
+    })
+})
+
 // ----- UPDATE Route -----
 // ----- CREATE Route -----
 // ----- EDIT Route -----
 
 // ----- SHOW Route -----
-Router.get(`/:id`, (req, res) => {
+router.get(`/:id`, (req, res) => {
     Flashcard.findById(req.params.id, (err, foundFlashcard) => {
-        console.log(foundFlashcard)
         res.render(`../views/flashcards/show.ejs`, {
             flashcard: foundFlashcard,
             tags: foundFlashcard.tags.split(', '),
@@ -57,4 +62,4 @@ Router.get(`/:id`, (req, res) => {
 })
 
 // ========== Export the Router ==========
-module.exports = Router
+module.exports = router
