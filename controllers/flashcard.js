@@ -31,8 +31,10 @@ Router.get(`/seed`, (req, res) => {
 
 // ----- INDEX Route -----
 Router.get(`/`, (req, res) => {
-    Flashcard.find({}, (err, allFlashcards) => {
-        res.send(allFlashcards)
+    Flashcard.find({}, (err, foundFlashcards) => {
+        res.render(`../views/flashcards/index.ejs`, {
+            flashcards: foundFlashcards,
+        })
     })
 })
 

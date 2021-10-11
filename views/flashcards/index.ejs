@@ -9,7 +9,9 @@
 <body>
     <h1>All Flashcards</h1>
     <ul>
-        
+        <% flashcards.forEach(flashcard => { %>
+            <li><%= flashcard.title %></li>
+        <% }) %>
     </ul>
 </body>
 </html>
