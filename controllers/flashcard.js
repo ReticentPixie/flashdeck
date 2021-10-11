@@ -24,6 +24,7 @@ router.get(`/seed`, (req, res) => {
     })
 })
 
+
 // =======================================
 //              ROUTES
 //       Follow - I.N.D.U.C.E.S.
@@ -32,7 +33,7 @@ router.get(`/seed`, (req, res) => {
 // ----- INDEX Route -----
 router.get(`/`, (req, res) => {
     Flashcard.find({}, (err, foundFlashcards) => {
-        res.render(`../views/flashcards/index.ejs`, {
+        res.render(`flashcards/index.ejs`, {
             flashcards: foundFlashcards,
         })
     })
@@ -40,7 +41,7 @@ router.get(`/`, (req, res) => {
 
 // ----- NEW Route -----
 router.get(`/new`, (req, res) => {
-    res.render(`../views/flashcards/new.ejs`)
+    res.render(`flashcards/new.ejs`)
 })
 
 // ----- DELETE Route -----
@@ -51,6 +52,13 @@ router.delete(`/:id`, (req, res) => {
 })
 
 // ----- UPDATE Route -----
+router.put(`/:id`, (req, res) => {
+    Flashcard.findByIdAndUpdate(req.params.id, req.body, {new: true}, (err, updatedFlashcard) => {
+        console.log(updatedFlashcard)
+        // redirect back to the show page
+        res.redirect(`/flashcards/${req.params.id}`)
+    })
+})
 
 // ----- CREATE Route -----
 router.post(`/`, (req, res) => {
@@ -60,19 +68,26 @@ router.post(`/`, (req, res) => {
     })
 })
 
-
 // ----- EDIT Route -----
+router.get(`/:id/edit`, (req, res) => {
+    Flashcard.findById(req.params.id, (err, foundFlashcard) => {
+        res.render(`flashcards/edit.ejs`, {
+            flashcard: foundFlashcard,
+        })
+    })
+})
 
 // ----- SHOW Route -----
 router.get(`/:id`, (req, res) => {
     Flashcard.findById(req.params.id, (err, foundFlashcard) => {
-        res.render(`../views/flashcards/show.ejs`, {
+        res.render(`flashcards/show.ejs`, {
             flashcard: foundFlashcard,
             tags: foundFlashcard.tags.split(', '),
             urls: foundFlashcard.referenceURLs.split(', '),
         })
     })
 })
+
 
 // ========== Export the Router ==========
 module.exports = router

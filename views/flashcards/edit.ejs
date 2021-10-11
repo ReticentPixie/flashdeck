@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDIT Page</title>
+</head>
+<body>
+    <h1>Add a new Flashcard</h1>
+    <form action='/flashcards/<%= flashcard._id %>?_method=PUT' method='POST'>
+        Word or Concept: <input type='text' name='title' value='<%= flashcard.title %>' /><br>
+        Definition: <input type='text' name='definition' value='<%= flashcard.definition %>' /><br>
+        <!-- References (enter URLs separated by a comma): <input type='text' name='referenceURLs' placeholder='Enter URLs separated by a comma' /><br>
+        Tags (separated by a comma): <input type='text' name='tags' placeholder='Enter tag words separated by a comma' /><br> -->
+        <input type='submit' value='EDIT Flashcard' />
+    </form>
+</body>
+</html>
