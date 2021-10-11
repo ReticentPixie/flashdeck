@@ -1,5 +1,6 @@
 <%- include('../partials/head.ejs') %>
 <body>
+    <%- include('../partials/nav.ejs') %>
     <h1>Add a new Flashcard</h1>
     <form action='/flashcards/<%= flashcard._id %>?_method=PUT' method='POST'>
         Word or Concept: <input type='text' name='title' value='<%= flashcard.title %>' /><br>

@@ -1,9 +1,6 @@
 <%- include('../partials/head.ejs') %>
 <body>
-    <nav> 
-        <a href='/'>Home</a><br>
-        <a href='/flashcards/new'>Add New Flashcard</a><br>
-    </nav>
+    <%- include('../partials/nav.ejs') %>
     <h1>All Flashcards</h1>
     <ul>
         <% flashcards.forEach(flashcard => { %>

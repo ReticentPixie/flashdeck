@@ -1,9 +1,6 @@
 <%- include('../partials/head.ejs') %>
 <body>
-    <nav>
-        <a href='/'>Home</a> <br>
-        <a href='/flashcards'>Back to Flashcard list</a>
-    </nav>
+    <%- include('../partials/nav.ejs') %>
     <h1><%= flashcard.title %></h1>
     <section><%= flashcard.definition %></section>
     <ul> Tags: 
