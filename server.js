@@ -7,6 +7,10 @@ const app = express()
 const mongoose = require(`mongoose`)                // ----- require mongoose for DB -----
 const logger = require(`morgan`)                    // ----- require mogran to aid development -----
 const methodOverride = require(`method-override`)   // ----- require method-override to allow delete & put routes -----
+// setting up jquery to work with node.js via jquery and jsdom
+const { JSDOM } = require( `jsdom` );
+const { window } = new JSDOM( `` );
+const $ = require( `jquery` )( window );
 
 
 // =======================================

@@ -7,20 +7,27 @@
             <form action='/flashcards/<%= flashcard.id %>?_method=DELETE' method='POST'>
                 <input class='button hvr-grow' type='submit' value='DELETE'>
             </form>
+            <a href='/flashcards/<%= flashcard.id %>'><input class="button hvr-grow" type="submit" value="Reset Flashcard"></a>
         </div>
         <div>
-            <h1><%= flashcard.title %></h1>  
+            <!-- <h1><%= flashcard.title %></h1>   -->
         </div>
         <div id='flashcard'>
             <img src=https://images.freeimages.com/images/large-previews/63d/index-card-1413900.jpg alt='See the Deck'>
-            <h4 class='hvr-float-shadow'><%= flashcard.definition %></h4>
+            <h5 id='title' style='font-weight: bolder; text-align: center;'><%= flashcard.title %> <br>
+                <span style='font-size: smaller; font-style: italic; font-weight: lighter;'>Click to see the definition!</span></h5>
+            <h5 id='definition' hidden='true'><%= flashcard.definition %></h5>
         </div>
         <div id='columns'>
             <div id='tags'>
                 <ul> Tags/Keywords: 
-                    <% tags.forEach(tag => { %>
-                        <li><%= tag %></li>
-                    <% }) %>
+                    <% if (tags.length == undefined) { %>
+                        <li>No tags or keywords available</li>
+                    <% } else {
+                        tags.forEach(tag => { %>
+                            <li><%= tag %></li>
+                        <% }) 
+                    } %>
                 </ul>
             </div>
             <div id='references'>

@@ -1,13 +1,29 @@
 <%- include('../partials/head.ejs') %>
 <body>
     <%- include('../partials/nav.ejs') %>
-    <h1>Add a new Flashcard</h1>
-    <form action='/flashcards' method='POST'>
-        Word or Concept: <input type='text' name='title' placeholder='Word/Concept' /><br>
-        Definition: <input type='text' name='definition' placeholder='Definition/Description' /><br>
-        References (enter URLs separated by a comma): <input type='text' name='referenceURLs' placeholder='Enter URLs separated by a comma' /><br>
-        Tags (separated by a comma): <input type='text' name='tags' placeholder='Enter tag words separated by a comma' /><br>
-        <input type='submit' value='Add New Flashcard' />
-    </form>
+    <div class='container' id='newBody'>
+        <h1>Add a New Flashcard</h1>
+        <form action='/flashcards' method='POST'>
+            <div class='row'>
+                <div class='label'>Word or Concept</div>
+                <input type='text' name='title' placeholder='Word/Concept' autocomplete='off' required='true'>
+            </div>
+            <div class='row'>
+                <div class='label'>Definition</div>
+                <textarea rows='20' name='definition' placeholder='Definition/Description' autocomplete='off' required='true'></textarea>
+            </div>
+            <div class='row'>
+                <div class='label'>Tags/Keywords <span>(separated by a comma)</span></div>
+                <input type='text' name='tags' placeholder='Enter tag words separated by a comma' autocomplete='off'>
+            </div>
+            <div class='row'>
+                <div class='label'>References <span>(separated by a comma)</span></div>
+                <textarea rows='20' name='referenceURLs' placeholder='Enter URLs separated by a comma' autocomplete='off'></textarea>
+            </div>
+            <div id='bottomRow'>
+                <input type='submit' value='Add New Card' class='hvr-grow'>
+            </div>
+        </form>
+    </div>
 </body>
 <%- include('../partials/footer.ejs') %>

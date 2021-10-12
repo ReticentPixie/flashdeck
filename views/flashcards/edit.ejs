@@ -1,13 +1,31 @@
 <%- include('../partials/head.ejs') %>
 <body>
     <%- include('../partials/nav.ejs') %>
-    <h1>Add a new Flashcard</h1>
-    <form action='/flashcards/<%= flashcard._id %>?_method=PUT' method='POST'>
-        Word or Concept: <input type='text' name='title' value='<%= flashcard.title %>' /><br>
-        Definition: <input type='text' name='definition' value='<%= flashcard.definition %>' /><br>
-        <!-- References (enter URLs separated by a comma): <input type='text' name='referenceURLs' placeholder='Enter URLs separated by a comma' /><br>
-        Tags (separated by a comma): <input type='text' name='tags' placeholder='Enter tag words separated by a comma' /><br> -->
-        <input type='submit' value='EDIT Flashcard' />
-    </form>
+    <div class='container' id='editBody'>
+        <h1>Edit the <%= flashcard.title %> Flashcard</h1>
+        <form action='/flashcards/<%= flashcard._id %>?_method=PUT' method='POST'>
+            <div class='row'>
+                <div class='label'>Word or Concept</div>
+                <input type='text' name='title' value='<%= flashcard.title %>' />
+            </div>
+            <div class='row'>
+                <div class='label'>Definition</div>
+                <input type='text' name='definition' value='<%= flashcard.definition %>' />
+            </div>
+            <div class='row'>
+                <div class='label'>Tags</div>
+                <input type='text' name='tags' value='<%= flashcard.tags %>' />
+            </div>
+            <div class='row'>
+                <div class='label'>References</div>
+                <input type='text' name='referenceURLs' value='<%= flashcard.referenceURLs %>'>
+            </div>
+            <!-- References (enter URLs separated by a comma): <input type='text' name='referenceURLs' placeholder='Enter URLs separated by a comma' /><br>
+            Tags (separated by a comma): <input type='text' name='tags' placeholder='Enter tag words separated by a comma' /><br> -->
+            <div id='bottomRow'>
+                <input type='submit' value='EDIT Flashcard' />
+            </div>
+        </form>
+    </div>
 </body>
 <%- include('../partials/footer.ejs') %>

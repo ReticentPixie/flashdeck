@@ -11,9 +11,7 @@ body {
     font-size: 2.5rem;
     padding: 10px 10px 0px 10px;
     box-shadow: 2px 2px 2px 1px slategray;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0px;
+    gap: 15px;
 }
 
 #navBar h4 {
@@ -106,6 +104,7 @@ body {
 #showBody h1 {
     text-align: center;
     height: 20%;
+    text-transform: capitalize;
 }
 
 #flashcard {
@@ -124,15 +123,14 @@ body {
     box-shadow: 4px 4px 4px 1px slategray;
 }
 
-#flashcard h4 {
+#flashcard h5 {
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: whitesmoke;
     border-radius: 2%;
     padding: 25px;
-    margin-bottom: 0px;
     box-shadow: 4px 4px 4px 1px slategray;
 }
 
@@ -153,7 +151,8 @@ body {
 }
 
 #tags {
-    width: 25%
+    width: 25%;
+    box-sizing: border-box;
 }
 
 #references {
@@ -168,6 +167,51 @@ body {
     margin-top: 20px;
 }
 
+/* ----- New & Edit styling ----- */
+
+#newBody,
+#editBody {
+    padding: 25px;
+}
+
+#newBody h1,
+#editBody h1 {
+    text-align: center;
+}
+
+#newBody form,
+#editBody form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.row {
+    display: flex;
+    gap: 10px;
+}
+
+.label {
+    width: 25%;
+    text-align: right;
+}
+
+#newBody input,
+#newBody textarea,
+#editBody input,
+#editBody textarea {
+    width: 75%;
+}
+
+#bottomRow {
+    align-self: center;
+    width: 40%;
+}
+
+form span {
+    font-style: oblique;
+    font-weight: lighter;
+}
 
 /* ----- Footer styling ----- */
 #footer {
@@ -179,8 +223,6 @@ body {
     padding: 10px;
     margin-top: 10px;
     box-shadow: 2px 2px 2px 1px slategray;
-    position: sticky;
-    bottom: 5px;
 }
 
 
@@ -243,3 +285,71 @@ body {
     transform: translateY(5px);
     /* move the element down by 5px (it will stay in place because it's attached to the element that also moves up 5px) */
   }
+
+  /* ----- styling at smaller screen sizes ----- */
+  @media (max-width: 750px) {
+    
+    /* ----- new flashcard form ----- */
+    .row {
+        flex-direction: column;
+    }
+
+    .label,
+    form input,
+    form textarea {
+        width: 100%;
+    }
+
+    .label {
+        text-align: left;
+        font-weight: bold;
+    }
+
+    #bottomRow input{
+        font-size: 1rem;
+    }
+
+
+    /* ----- flashcard show page ----- */
+    #flashcard img {
+        box-sizing: border-box;
+        max-width: 95%;
+        object-fit: cover;
+        justify-self: center;
+        border-radius: 1%;
+        box-shadow: 4px 4px 4px 1px slategray;
+    }
+
+    #flashcard h5 {
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        background-color: whitesmoke;
+        border-radius: 2%;
+        padding: 15px;
+        box-shadow: 4px 4px 4px 1px slategray;
+        font-size: 1.5rem;
+        margin-bottom: 0px;
+    }
+
+    #showBody ul {
+        margin: 10px;
+    }
+
+    #columns {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #tags {
+        width: 100%;
+    }
+
+    #references {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+  }
+
+
