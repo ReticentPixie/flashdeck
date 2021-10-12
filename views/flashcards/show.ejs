@@ -14,27 +14,31 @@
         </div>
         <div id='flashcard'>
             <img src=https://images.freeimages.com/images/large-previews/63d/index-card-1413900.jpg alt='See the Deck'>
-            <h5 id='title' style='font-weight: bolder; text-align: center;'><%= flashcard.title %> <br>
+            <h5 id='title' style='font-weight: bolder; text-align: center; text-transform: capitalize;'><%= flashcard.title %> <br>
                 <span style='font-size: smaller; font-style: italic; font-weight: lighter;'>Click to see the definition!</span></h5>
             <h5 id='definition' hidden='true'><%= flashcard.definition %></h5>
         </div>
         <div id='columns'>
             <div id='tags'>
-                <ul> Tags/Keywords: 
-                    <% if (tags.length == undefined) { %>
-                        <li>No tags or keywords available</li>
-                    <% } else {
-                        tags.forEach(tag => { %>
+                <ul>Tags/Keywords:
+                    <% if (tags === 'empty') { %>
+                        <li>Edit card to add tags</li>
+                    <% } else { %>
+                        <% tags.forEach(tag => { %>
                             <li><%= tag %></li>
-                        <% }) 
-                    } %>
+                        <% })
+                     } %>
                 </ul>
             </div>
             <div id='references'>
                 <ul> References: 
-                    <% urls.forEach(url => { %>
-                        <li><a href='<%= url %>' target='blank'><%= url %></a></li>
-                    <% }) %>
+                    <% if (urls === 'empty') { %>
+                        <li>Edit card to add references</li>
+                    <% } else { %>
+                        <% urls.forEach(url => { %>
+                            <li><a href='<%= url %>' target='blank'><%= url %></a></li>
+                        <% })
+                     } %>
                 </ul>
             </div>
         </div>

@@ -68,12 +68,18 @@ router.get(`/:id/edit`, async(req, res) => {
 // ----- SHOW Route -----
 router.get(`/:id`, async(req, res) => {
     const flashcard = await Flashcard.findById(req.params.id)
-    res.render(`flashcards/show.ejs`, {
-        flashcard, 
-        pageTitle: `Flashcard`,
-        tags: flashcard.tags.split(', '),
-        urls: flashcard.referenceURLs.split(', '),
-    })
+ 
+    if (flashcard.tags === '') {
+        tags = 'empty'
+    } else {
+        tags = flashcard.tags.split(', ')
+    }
+    if (flashcard.referenceURLs === '') {
+        urls = 'empty'
+    } else {
+        urls = flashcard.referenceURLs.split(', ')
+    }
+    res.render(`flashcards/show.ejs`, {flashcard, tags, urls, pageTitle: `Flashcard`})
 })
 
 
