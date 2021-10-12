@@ -11,6 +11,9 @@ body {
     font-size: 2.5rem;
     padding: 10px 10px 0px 10px;
     box-shadow: 2px 2px 2px 1px slategray;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0px;
 }
 
 #navBar h4 {
@@ -61,7 +64,9 @@ body {
     transform: translate(-50%, -50%);
 }
 
+
 /* ----- Flashcard INDEX styling ----- */
+
 #flashcardIndexBody {
     display: flex;
     flex-direction: column;
@@ -92,6 +97,78 @@ body {
 }
 
 
+/* ----- Flashcard SHOW styling ----- */
+#showBody{
+    display: flex;
+    flex-direction: column;
+}
+
+#showBody h1 {
+    text-align: center;
+    height: 20%;
+}
+
+#flashcard {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+#flashcard img {
+    box-sizing: border-box;
+    max-width: 80%;
+    object-fit: cover;
+    justify-self: center;
+    border-radius: 1%;
+    box-shadow: 4px 4px 4px 1px slategray;
+}
+
+#flashcard h4 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: whitesmoke;
+    border-radius: 2%;
+    padding: 25px;
+    margin-bottom: 0px;
+    box-shadow: 4px 4px 4px 1px slategray;
+}
+
+#showBody ul {
+    font-size: 1.5rem;
+    font-weight: bolder;
+    margin: 20px;
+}
+
+#showBody li {
+    font-weight: normal;
+    overflow: auto;
+    list-style-type: disc;
+}
+
+#columns {
+    display: flex;
+}
+
+#tags {
+    width: 25%
+}
+
+#references {
+    width: 75%;
+    box-sizing: border-box;
+}
+
+#showBodyActions {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+
 /* ----- Footer styling ----- */
 #footer {
     background-color: lightcyan;
@@ -102,6 +179,8 @@ body {
     padding: 10px;
     margin-top: 10px;
     box-shadow: 2px 2px 2px 1px slategray;
+    position: sticky;
+    bottom: 5px;
 }
 
 
