@@ -39,8 +39,9 @@ As an emerging engineer, a pen and paper simply hasn’t kept up with the many c
 
 ### Install Dependencies:
 From the root of the cloned repository run "npm install" which will use the included package.json file to install all required dependencies. Currently required dependencies include:
-| ----------- | ----------- |
+
 | Dependency | Purpose |
+| ------------------- | ---------------------- |
 | [Express](https://expressjs.com/) | framework for Node.js |
 | [mongoose](https://mongoosejs.com/) | object modeling for node.js |
 | [dotenv](https://www.npmjs.com/package/dotenv) | loads environment variables from `.env` into `process.env` |
