@@ -62,13 +62,19 @@ router.post(`/`, async(req, res) => {
 // ----- EDIT Route -----
 router.get(`/:id/edit`, async(req, res) => {
     const flashcard = await Flashcard.findById(req.params.id)
+    // determine if this flashcard entry has references - used to determine which input style is displayed on the edit view
+    if (flashcard.referenceURLs === '') {
+        urls = 'empty'
+    } else {
+        urls = flashcard.referenceURLs.split(', ')
+    }
     res.render(`flashcards/edit.ejs`, {flashcard, pageTitle: `EDIT`})
 })
 
 // ----- SHOW Route -----
 router.get(`/:id`, async(req, res) => {
     const flashcard = await Flashcard.findById(req.params.id)
- 
+    // determine if this flashcard entry has tags and/or references
     if (flashcard.tags === '') {
         tags = 'empty'
     } else {
@@ -79,6 +85,7 @@ router.get(`/:id`, async(req, res) => {
     } else {
         urls = flashcard.referenceURLs.split(', ')
     }
+    // render the show view
     res.render(`flashcards/show.ejs`, {flashcard, tags, urls, pageTitle: `Flashcard`})
 })
 

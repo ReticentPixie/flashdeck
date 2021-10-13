@@ -108,6 +108,7 @@ body {
 }
 
 #flashcard {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -125,12 +126,12 @@ body {
 
 #flashcard h5 {
     position: absolute;
-    top: 40%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: whitesmoke;
     border-radius: 2%;
-    padding: 25px;
+    padding: 50px;
     box-shadow: 4px 4px 4px 1px slategray;
 }
 
@@ -162,6 +163,7 @@ body {
 
 #showBodyActions {
     display: flex;
+    flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
     margin-top: 20px;
@@ -194,6 +196,7 @@ body {
 .label {
     width: 25%;
     text-align: right;
+    font-weight: bold;
 }
 
 #newBody input,
@@ -312,24 +315,11 @@ form span {
 
     /* ----- flashcard show page ----- */
     #flashcard img {
-        box-sizing: border-box;
         max-width: 95%;
-        object-fit: cover;
-        justify-self: center;
-        border-radius: 1%;
-        box-shadow: 4px 4px 4px 1px slategray;
     }
 
     #flashcard h5 {
-        position: absolute;
-        top: 45%;
-        left: 50%;
-        background-color: whitesmoke;
-        border-radius: 2%;
-        padding: 15px;
-        box-shadow: 4px 4px 4px 1px slategray;
-        font-size: 1.5rem;
-        margin-bottom: 0px;
+        padding: 15px; 
     }
 
     #showBody ul {
@@ -352,4 +342,10 @@ form span {
 
   }
 
+  @media (min-width: 450px) {
 
+    #flashcard h5 {
+        font-size: 2rem;
+    }
+
+  }
