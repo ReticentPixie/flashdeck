@@ -56,4 +56,6 @@ After installing all dependencies, create a `.env` file in the root of the repos
 `PORT=<assign-a-local-port>`
 `DATABASE_URL=<add-your-mongoDB-link-be-sure-to-update-password-in-your-link>`
 
-### Go forth & Code!
+### Go Forth & Code!
+
+Don't forget to come back and share the cool stuff you've done to make FlashDeck your own!
