@@ -3,8 +3,7 @@ FlashDeck is a personalized study tool that mimics old school flashcards built f
 
 As an emerging engineer, a pen and paper simply hasn’t kept up with the many concepts and terms I learn each day. Creating my own study tool has provided a solution to managing my ever-growing concept/term bank. FlashDeck has also put my new coding skills into practice developing a practical, scaleable app that can adapt and grow to support learners of all types.
 
-# Check out the Live App
-Click [here](https://flashdeck-5000.herokuapp.com/) to see the live app.
+# Live App Available [Here](https://flashdeck-5000.herokuapp.com/)
 
 # Technologies Used
 - Node.js
