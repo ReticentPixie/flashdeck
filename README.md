@@ -16,14 +16,14 @@ As an emerging engineer, a pen and paper simply hasn’t kept up with the many c
 - jQuery
 - HTML
 - CSS
-- [Hover CSS] (https://ianlunn.github.io/Hover/)
-- [Font Awesome] (https://fontawesome.com/)
+- [Hover CSS](https://ianlunn.github.io/Hover)
+- [Font Awesome](https://fontawesome.com)
 
 # Screenshot(s)
 
-![FlashDeck Homepage] (/images/FlashDeck-homepage.png)
+![FlashDeck Homepage](/public/images/FlashDeck-homepage.png)
 
-![FlashDeck Sample Flashcard] (/images/FlashDeck-flashcard-page.png)
+![FlashDeck Sample Flashcard](/public/images/FlashDeck-flashcard-page.png)
 
 # IceBox - Future Features
 - Authentication - required to allow users to favorite/save cards to create personalized decks from the FlashDeck full list of study concepts
