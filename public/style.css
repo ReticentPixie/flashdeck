@@ -131,7 +131,7 @@ body {
     transform: translate(-50%, -50%);
     background-color: whitesmoke;
     border-radius: 2%;
-    padding: 50px;
+    padding: 45px;
     box-shadow: 4px 4px 4px 1px slategray;
 }
 
@@ -342,10 +342,10 @@ form span {
 
   }
 
-  @media (min-width: 450px) {
+  @media (max-width: 650px) {
 
     #flashcard h5 {
-        font-size: 2rem;
+        font-size: 1.75rem;
     }
 
   }
