@@ -52,9 +52,9 @@ From the root of the cloned repository run "npm install" which will use the incl
 ### Post Installation Steps
 
 After installing all dependencies, create a `.env` file in the root of the repository and add the required environmental variables. Note - the keys are case sensitive and `.env` does not allow spaces or “”. Copy and paste the code block below exactly and replace <> with your local environment information. 
-
-`PORT=<assign-a-local-port>`
-`DATABASE_URL=<add-your-mongoDB-link-be-sure-to-update-password-in-your-link>`
+     
+    PORT=<assign-a-local-port>     
+    DATABASE_URL=<add-your-mongoDB-link-be-sure-to-update-password-in-your-link>
 
 ### Go Forth & Code!
 
