@@ -1,14 +1,14 @@
 {
   "name": "flashdeck",
   "version": "1.0.0",
-  "description": "",
+  "description": "Modern take on old school flashcards built using MEN stack",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["node.js", "express", "mongoDB", "mongoose", "javascript", "css", "html", "jquery"],
+  "author": "Diana Barney",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^10.0.0",
