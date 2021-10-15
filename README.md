@@ -14,6 +14,8 @@ As an emerging engineer, a pen and paper simply hasn’t kept up with the many c
 - jQuery
 - HTML
 - CSS
+- [Skeleton CSS](http://getskeleton.com/)
+- [Normalize CSS](https://necolas.github.io/normalize.css/)
 - [Hover CSS](https://ianlunn.github.io/Hover)
 - [Font Awesome](https://fontawesome.com)
 
